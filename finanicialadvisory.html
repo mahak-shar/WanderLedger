@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Advisory | Low Budget Travel</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+  <link rel="stylesheet" media="screen and (min-width: 1100px)" href="css/widescreen.css">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0044cc;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+        }
+
+        header .logo h1 {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin-top: 0.5rem;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .advisory-section {
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2, h3 {
+            color: #0044cc;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .tips-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        form {
+            margin-top: 1rem;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #0044cc;
+            color: white;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003399;
+        }
+
+        #estimatedCostOutput {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #28a745;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgb(67, 67, 67);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <h1 class="logo">
+          <span class="text-primary">
+            <i class="fas fa-book-open"></i> Wander </span>Ledger
+        </h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#Plan Trip">Plan Trip</a></li>
+          <li><a href="finanicialadvisory.html">Finiancial Avisory</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    <section class="advisory-section">
+        <div class="container">
+            <h2>Empower Your Financial Journey with Low Budget Travel Planning</h2>
+            <p>Planning a budget-friendly trip doesn't have to be hard. Let us guide you with tips, strategies, and tools to plan an amazing journey while saving on costs!</p>
+
+            <!-- Tips Section -->
+            <div class="tips-section">
+                <h3>Top Budget Travel Tips</h3>
+                <ul>
+                    <li>Book flights early and look for deals.</li>
+                    <li>Travel during off-peak seasons.</li>
+                    <li>Stay in budget-friendly accommodations like hostels or Airbnbs.</li>
+                    <li>Use public transportation and walk whenever possible.</li>
+                    <li>Cook your own meals instead of dining out every day.</li>
+                    <li>Look for free activities and attractions at your destination.</li>
+                </ul>
+            </div>
+
+            <!-- Cost Estimator -->
+            <div class="estimator-section">
+                <h3>Trip Cost Estimator</h3>
+                <p>Estimate the cost of your trip and see how you can save:</p>
+                <form id="costEstimatorForm">
+                    <label for="days">Number of days:</label>
+                    <input type="number" id="days" min="1" max="30" required>
+
+                    <label for="accommodation">Accommodation cost per night (in ₹):</label>
+                    <input type="number" id="accommodation" required>
+
+                    <label for="food">Food cost per day (in ₹):</label>
+                    <input type="number" id="food" required>
+
+                    <label for="transport">Daily transport cost (in ₹):</label>
+                    <input type="number" id="transport" required>
+
+                    <label for="misc">Miscellaneous expenses per day (in ₹):</label>
+                    <input type="number" id="misc" required>
+
+                    <button type="button" onclick="estimateCost()">Estimate Cost</button>
+                </form>
+                <div id="estimatedCostOutput"></div>
+            </div>
+
+            <!-- Budget Guide -->
+            <div class="guide-section">
+                <h3>Budget-Friendly Travel Guide</h3>
+                <p>Download our detailed guide to learn how you can plan an affordable trip, with insider tips and tricks to help you stretch your budget.</p>
+                <button id="downloadGuide">Download Guide</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 WanderLedger. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function estimateCost() {
+            // Get values from input fields
+            let days = document.getElementById('days').value;
+            let accommodation = document.getElementById('accommodation').value;
+            let food = document.getElementById('food').value;
+            let transport = document.getElementById('transport').value;
+            let misc = document.getElementById('misc').value;
+
+            // Validate that all inputs are filled
+            if (days && accommodation && food && transport && misc) {
+                // Calculate total cost
+                let totalCost = (accommodation * days) + (food * days) + (transport * days) + (misc * days);
+                document.getElementById('estimatedCostOutput').innerText = `Estimated Total Cost: ₹${totalCost}`;
+            } else {
+                document.getElementById('estimatedCostOutput').innerText = "Please fill out all fields.";
+            }
+        }
+
+        // Guide download button
+        document.getElementById('downloadGuide').addEventListener('click', function () {
+            alert('Your travel guide is being prepared for download!');
+        });
+    </script>
+</body>
+</html>
